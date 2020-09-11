@@ -1,0 +1,46 @@
+[
+    {
+        "rendered_body": "<div class=\"code-frame\" data-lang=\"text\"><div class=\"highlight\"><pre>resource \"RESOURCE_TYPE\" \"RESOURCE_NAME\" {\n  for_each = toset(local.hoge)\n  aaa = each.value\n}\n\nlocals {\n  hoge = [\n    \"fuge\",\n    \"hage\"\n  ]\n}\n</pre></div></div>\n\n<p>でやると、</p>\n\n<div class=\"code-frame\" data-lang=\"text\"><div class=\"highlight\"><pre>RESOURCE_NAME[\"fuge\"]\nRESOURCE_NAME[\"hage\"]\n</pre></div></div>\n\n<p>とかの resource_name の resource ができる。</p>\n",
+        "body": "```\nresource \"RESOURCE_TYPE\" \"RESOURCE_NAME\" {\n  for_each = toset(local.hoge)\n  aaa = each.value\n}\n\nlocals {\n  hoge = [\n    \"fuge\",\n    \"hage\"\n  ]\n}\n```\n\nでやると、\n\n```\nRESOURCE_NAME[\"fuge\"]\nRESOURCE_NAME[\"hage\"]\n```\n\nとかの resource_name の resource ができる。\n",
+        "coediting": false,
+        "comments_count": 0,
+        "created_at": "2020-09-11T16:29:21+09:00",
+        "group": null,
+        "id": "37447d9b2f28e71fb688",
+        "likes_count": 0,
+        "private": false,
+        "reactions_count": 0,
+        "tags": [
+            {
+                "name": "Terraform",
+                "versions": []
+            },
+            {
+                "name": "HCL2",
+                "versions": []
+            }
+        ],
+        "title": "Terraform で foreach で resource を作る方法",
+        "updated_at": "2020-09-11T16:29:21+09:00",
+        "url": "https://qiita.com/rysk92/items/37447d9b2f28e71fb688",
+        "user": {
+            "description": null,
+            "facebook_id": null,
+            "followees_count": 12,
+            "followers_count": 27,
+            "github_login_name": null,
+            "id": "rysk92",
+            "items_count": 96,
+            "linkedin_id": null,
+            "location": null,
+            "name": "",
+            "organization": null,
+            "permanent_id": 18869,
+            "profile_image_url": "https://s3-ap-northeast-1.amazonaws.com/qiita-image-store/0/18869/83d1638068d9c4c85a6696a24c4f5b44cad6e179/x_large.png?1573192886",
+            "team_only": false,
+            "twitter_screen_name": null,
+            "website_url": null
+        },
+        "page_views_count": null
+    }
+]
