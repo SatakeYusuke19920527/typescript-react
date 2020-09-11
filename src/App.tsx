@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { FC } from 'react';
 import './App.css';
 
-function App() {
+interface AppProps {
+  message: string,
+  name: string
+}
+
+const App: FC<AppProps> = (props) => {
+  const { message, name } = props
+  console.log(props)
   return (
     <div className="App">
-      <h1>Hello
+      <h1>
+        {message}, {name}
       </h1>
     </div>
   );
