@@ -1,32 +1,33 @@
-import React, { FC, useEffect } from 'react';
+import React, { FC } from 'react';
 import './App.css';
 
-import useApi from './api'
+const App: FC<{}> = () => {
 
-interface AppProps {
-  message: string,
-}
+  const bmi: (weight: number, height: number, printable?: boolean) => number | string = (weight, height, printable) => {
+    const bmi = weight / (height * height)
+    if (printable) {
+      console.log({ bmi })
+      return bmi
+    } else {
+      return 'permissoin denied'
+    }
 
-const App: FC<AppProps> = (props) => {
-  const { message } = props
-  const value = useApi()
+  }
 
-  useEffect(() => {
-    console.log(value)
-  }, [value]);
+  const nextYearSarary = (currentSalary: number, rate: number = 1.1) => {
+    return currentSalary * rate
+  }
+
+  console.log(nextYearSarary(1000))
 
   return (
     <div className="App">
       <h1>
-        {message}
-        {value}
+        {bmi(80, 1.8, true)}
       </h1>
     </div>
   );
 }
 
-App.defaultProps = {
-  message: 'Hello !!!',
-}
 
 export default App;
