@@ -18,6 +18,16 @@ const App: FC<{}> = () => {
     return currentSalary * rate
   }
 
+  const reducer = (accumulator: number, currentValue: number): number => accumulator + currentValue;
+
+  const sum: (...values: number[]) => number = (...values: number[]): number => {
+    const sum = values.reduce(reducer)
+    console.log(sum)
+    return sum
+  }
+
+  sum(1, 2, 3, 4)
+
   console.log(nextYearSarary(1000))
 
   return (
